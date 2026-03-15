@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Northwatch</title>
+<link rel="stylesheet" href="styles.css?v=9">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <div class="branding">
+      <h1 class="logo">Northwatch</h1>
+      <p class="tagline">Professional Presence &amp; Security Consultation</p>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">Background</a>
+      <a href="contact.html" class="nav-cta active">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- PAGE BANNER -->
+<section class="page-banner">
+  <div class="container">
+    <span class="page-banner-eyebrow">Get in Touch</span>
+    <h1>Contact</h1>
+    <p>Arrange a private consultation.</p>
+  </div>
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section class="section-dark">
+  <div class="container">
+    <div class="contact-wrapper">
+
+      <div class="contact-info">
+        <h3>Private &amp; Confidential</h3>
+        <p>
+          All enquiries are handled privately and confidentially.
+          Please describe your situation briefly and we will respond
+          to arrange a consultation.
+        </p>
+
+        <div class="contact-detail">
+          <strong>Response</strong>
+          All enquiries are responded to personally.
+        </div>
+
+        <div class="contact-detail">
+          <strong>Discretion</strong>
+          All enquiries treated in strict confidence.
+        </div>
+
+        <div class="contact-detail">
+          <strong>Availability</strong>
+          Consultations arranged individually.
+        </div>
+      </div>
+
+      <div>
+        <form id="contactForm" onsubmit="return false;">
+
+          <!-- Hidden site identifier -->
+          <input type="hidden" name="site" value="security">
+
+          <!-- Honeypot - hidden from real users -->
+          <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Briefly describe your situation or requirement..." required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+
+        </form>
+
+        <div id="formMessage"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <h2 class="logo">Northwatch</h2>
+        <p class="tagline">Professional Presence &amp; Security Consultation</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">Background</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-accent"></span>
+      Northwatch Group &nbsp;&mdash;&nbsp; All enquiries handled privately
+    </div>
+
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
