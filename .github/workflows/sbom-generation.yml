@@ -1,0 +1,58 @@
+name: SBOM Generation
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  sbom:
+    runs-on: ubuntu-latest
+    name: Generate Software Bill of Materials
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate SBOM for static site
+        run: |
+          cat > sbom.md << 'EOF'
+          # Software Bill of Materials (SBOM)
+          
+          ## Project Information
+          - **Name**: site1
+          - **Type**: Static HTML/JavaScript Website
+          - **Description**: Frontend website with HTML, CSS, and JavaScript
+          
+          ## Components
+          
+          ### Direct Dependencies
+          - None (static site with no npm dependencies)
+          
+          ### Source Files
+          - index.html
+          - about.html
+          - services.html
+          - contact.html
+          - thank-you.html
+          - script.js
+          - style.css
+          - styles.css
+          - sendmail.php (backend)
+          
+          ### Generated On
+          $(date -u +'%Y-%m-%dT%H:%M:%SZ')
+          
+          ## Security Considerations
+          - Backend: PHP (sendmail.php) - ensure proper input validation
+          - Frontend: Vanilla JavaScript - no framework vulnerabilities
+          - Static assets: HTML, CSS - no dependency vulnerabilities
+          
+          EOF
+          cat sbom.md
+
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.md
+          retention-days: 90
